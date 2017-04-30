@@ -46,8 +46,7 @@ namespace checkHaveIBeenPwned.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome" +
-            "/57.0.2987.133 Safari/537.36")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pwnage-Checker-For-mstarrPersonalApp")]
         public string ua {
             get {
                 return ((string)(this["ua"]));
