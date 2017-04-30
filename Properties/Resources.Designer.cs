@@ -61,12 +61,12 @@ namespace checkHaveIBeenPwned.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to For to provide a simple interface to check
-        ///Troy Hunt&apos;s haveibeenpwned.com site for 
-        ///a few email addresses. 
+        ///   Looks up a localized string similar to I suppose this link to the Creative Commons Attribution 4.0 International License is important: https://creativecommons.org/licenses/by/4.0/
         ///
+        ///For to provide a simple interface to check
+        ///Troy Hunt&apos;s haveibeenpwned.com site for email addresses.
         ///Enter a few address to keep track of; 
-        ///clicking an address will request data from Mr. Hunt&apos; site..
+        ///clicking an address will request data from Mr. Hunt&apos; site, haveibeenpwned.com..
         /// </summary>
         internal static string txtDescription {
             get {

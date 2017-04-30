@@ -28,7 +28,7 @@ namespace checkHaveIBeenPwned
       lblVersion.Text = string.Format("Version {0}", AssemblyVersion);
       lblCopyright.Text = AssemblyCopyright;
       lblCompanyName.Text = AssemblyCompany;
-      txtDescription.Text = AssemblyDescription;
+      //txtDescription.Text = AssemblyDescription;
     }
 
     #region Assembly Attribute Accessors

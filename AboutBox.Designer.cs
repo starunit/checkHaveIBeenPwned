@@ -94,7 +94,6 @@ namespace checkHaveIBeenPwned
       this.lblProductName.Name = "lblProductName";
       this.lblProductName.Size = new System.Drawing.Size(271, 17);
       this.lblProductName.TabIndex = 19;
-      this.lblProductName.Text = "Check Have I Been Pwned";
       this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // lblVersion
@@ -106,7 +105,6 @@ namespace checkHaveIBeenPwned
       this.lblVersion.Name = "lblVersion";
       this.lblVersion.Size = new System.Drawing.Size(271, 17);
       this.lblVersion.TabIndex = 0;
-      this.lblVersion.Text = "1";
       this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // lblCopyright
@@ -118,7 +116,6 @@ namespace checkHaveIBeenPwned
       this.lblCopyright.Name = "lblCopyright";
       this.lblCopyright.Size = new System.Drawing.Size(271, 17);
       this.lblCopyright.TabIndex = 21;
-      this.lblCopyright.Text = "Copyright © 2017 Starunit Web Services";
       this.lblCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // lblCompanyName
@@ -130,7 +127,6 @@ namespace checkHaveIBeenPwned
       this.lblCompanyName.Name = "lblCompanyName";
       this.lblCompanyName.Size = new System.Drawing.Size(271, 17);
       this.lblCompanyName.TabIndex = 22;
-      this.lblCompanyName.Text = "Starunit Web Services";
       this.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // okButton

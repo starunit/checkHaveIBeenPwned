@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("checkHaveIBeenPwned")]
-[assembly: AssemblyDescription("For to provide a simple interface to checkTroy Hunt's haveibeenpwned.com site for a few email addresses.")]
+[assembly: AssemblyDescription("For to provide a simple interface to check Troy Hunt's haveibeenpwned.com site for a few email addresses.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Starunit Web Services")]
 [assembly: AssemblyProduct("checkHaveIBeenPwned")]

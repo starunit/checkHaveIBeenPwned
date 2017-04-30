@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="txtDescription" xml:space="preserve">
-    <value>For to provide a simple interface to check
-Troy Hunt's haveibeenpwned.com site for 
-a few email addresses. 
+    <value>I suppose this link to the Creative Commons Attribution 4.0 International License is important: https://creativecommons.org/licenses/by/4.0/
 
+For to provide a simple interface to check
+Troy Hunt's haveibeenpwned.com site for email addresses.
 Enter a few address to keep track of; 
-clicking an address will request data from Mr. Hunt' site.</value>
+clicking an address will request data from Mr. Hunt' site, haveibeenpwned.com.</value>
   </data>
 </root>
