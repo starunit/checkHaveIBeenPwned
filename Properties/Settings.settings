@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="checkHaveIBeenPwned.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HIBP_URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://haveibeenpwned.com/api/v2/breachedaccount/</Value>
+    </Setting>
+    <Setting Name="AddressList" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ua" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
