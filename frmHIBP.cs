@@ -12,6 +12,7 @@ namespace checkHaveIBeenPwned
   /// <summary>
   /// Main form for to ping Troy Hunt's Have I Been Pwned site
   /// </summary>
+  /// <seealso cref="System.Windows.Forms.Form" />
   public partial class FrmHibp : Form
   {
     /// <summary>
@@ -64,7 +65,7 @@ namespace checkHaveIBeenPwned
     /// <param name="e">additional arguments</param>
     private void btnAddNew_Click(object sender, EventArgs e)
     {
-      // build a list of current addresses, concatenate new address, save to settings
+      // build a list of current addresses, concatenate new address, save to settings           
       string bufferAddresses = string.Empty;
 
       if (txtNewAddress.Text.Length > 0)

@@ -25,7 +25,7 @@ namespace checkHaveIBeenPwned
       InitializeComponent();
       //Text = string.Format("About {0}", AssemblyTitle);
       lblProductName.Text = AssemblyProduct;
-      lblVersion.Text = string.Format("Version {0}", AssemblyVersion);
+      lblVersion.Text = $@"Version {AssemblyVersion}";
       lblCopyright.Text = AssemblyCopyright;
       lblCompanyName.Text = AssemblyCompany;
       //txtDescription.Text = AssemblyDescription;
@@ -51,27 +51,21 @@ namespace checkHaveIBeenPwned
     //  }
     //}
 
-    private string AssemblyVersion
-    {
-      get
-      {
-        return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-      }
-    }
+    private string AssemblyVersion => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-    private string AssemblyDescription
-    {
-      get
-      {
-        object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-        if (attributes.Length == 0)
-        {
-          return string.Empty;
-        }
+    //private string AssemblyDescription
+    //{
+    //  get
+    //  {
+    //    object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
+    //    if (attributes.Length == 0)
+    //    {
+    //      return string.Empty;
+    //    }
 
-        return ((AssemblyDescriptionAttribute)attributes[0]).Description;
-      }
-    }
+    //    return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+    //  }
+    //}
 
     private string AssemblyProduct
     {
@@ -126,6 +120,11 @@ namespace checkHaveIBeenPwned
       Close();
     }
 
+    /// <summary>
+    /// Handles the Load event of the frmHIBP_About control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void frmHIBP_About_Load(object sender, EventArgs e)
     {
       txtDescription.Text = Resources.txtDescription;

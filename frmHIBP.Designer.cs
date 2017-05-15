@@ -35,181 +35,181 @@ namespace checkHaveIBeenPwned
     /// </summary>
     private void InitializeComponent()
     {
-      pnlControls = new System.Windows.Forms.Panel();
-      btnClose = new System.Windows.Forms.Button();
-      pnlResults = new System.Windows.Forms.Panel();
-      txtResults = new System.Windows.Forms.RichTextBox();
-      lstAddresses = new System.Windows.Forms.ListBox();
-      txtNewAddress = new System.Windows.Forms.TextBox();
-      btnAddNew = new System.Windows.Forms.Button();
-      btnRemove = new System.Windows.Forms.Button();
-      lblHeader = new System.Windows.Forms.Label();
-      menuStrip1 = new System.Windows.Forms.MenuStrip();
-      fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      pnlControls.SuspendLayout();
-      pnlResults.SuspendLayout();
-      menuStrip1.SuspendLayout();
-      SuspendLayout();
+      this.pnlControls = new System.Windows.Forms.Panel();
+      this.btnClose = new System.Windows.Forms.Button();
+      this.pnlResults = new System.Windows.Forms.Panel();
+      this.txtResults = new System.Windows.Forms.RichTextBox();
+      this.lstAddresses = new System.Windows.Forms.ListBox();
+      this.txtNewAddress = new System.Windows.Forms.TextBox();
+      this.btnAddNew = new System.Windows.Forms.Button();
+      this.btnRemove = new System.Windows.Forms.Button();
+      this.lblHeader = new System.Windows.Forms.Label();
+      this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+      this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.pnlControls.SuspendLayout();
+      this.pnlResults.SuspendLayout();
+      this.menuStrip1.SuspendLayout();
+      this.SuspendLayout();
       // 
       // pnlControls
       // 
-      pnlControls.Controls.Add(btnClose);
-      pnlControls.Dock = System.Windows.Forms.DockStyle.Bottom;
-      pnlControls.Location = new System.Drawing.Point(0, 545);
-      pnlControls.Name = "pnlControls";
-      pnlControls.Size = new System.Drawing.Size(833, 47);
-      pnlControls.TabIndex = 0;
+      this.pnlControls.Controls.Add(this.btnClose);
+      this.pnlControls.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.pnlControls.Location = new System.Drawing.Point(0, 545);
+      this.pnlControls.Name = "pnlControls";
+      this.pnlControls.Size = new System.Drawing.Size(833, 47);
+      this.pnlControls.TabIndex = 0;
       // 
       // btnClose
       // 
-      btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      btnClose.Location = new System.Drawing.Point(746, 13);
-      btnClose.Name = "btnClose";
-      btnClose.Size = new System.Drawing.Size(75, 23);
-      btnClose.TabIndex = 0;
-      btnClose.Text = "&Close";
-      btnClose.UseVisualStyleBackColor = true;
-      btnClose.Click += new System.EventHandler(btnClose_Click);
+      this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnClose.Location = new System.Drawing.Point(746, 13);
+      this.btnClose.Name = "btnClose";
+      this.btnClose.Size = new System.Drawing.Size(75, 23);
+      this.btnClose.TabIndex = 0;
+      this.btnClose.Text = "&Close";
+      this.btnClose.UseVisualStyleBackColor = true;
+      this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
       // 
       // pnlResults
       // 
-      pnlResults.BackColor = System.Drawing.SystemColors.ActiveCaption;
-      pnlResults.Controls.Add(txtResults);
-      pnlResults.Dock = System.Windows.Forms.DockStyle.Bottom;
-      pnlResults.Location = new System.Drawing.Point(0, 171);
-      pnlResults.Name = "pnlResults";
-      pnlResults.Size = new System.Drawing.Size(833, 374);
-      pnlResults.TabIndex = 1;
+      this.pnlResults.BackColor = System.Drawing.SystemColors.ActiveCaption;
+      this.pnlResults.Controls.Add(this.txtResults);
+      this.pnlResults.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.pnlResults.Location = new System.Drawing.Point(0, 171);
+      this.pnlResults.Name = "pnlResults";
+      this.pnlResults.Size = new System.Drawing.Size(833, 374);
+      this.pnlResults.TabIndex = 1;
       // 
       // txtResults
       // 
-      txtResults.BackColor = System.Drawing.SystemColors.Info;
-      txtResults.Dock = System.Windows.Forms.DockStyle.Fill;
-      txtResults.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      txtResults.Location = new System.Drawing.Point(0, 0);
-      txtResults.Name = "txtResults";
-      txtResults.ReadOnly = true;
-      txtResults.Size = new System.Drawing.Size(833, 374);
-      txtResults.TabIndex = 0;
-      txtResults.Text = string.Empty;
+      this.txtResults.BackColor = System.Drawing.SystemColors.Info;
+      this.txtResults.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.txtResults.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtResults.Location = new System.Drawing.Point(0, 0);
+      this.txtResults.Name = "txtResults";
+      this.txtResults.ReadOnly = true;
+      this.txtResults.Size = new System.Drawing.Size(833, 374);
+      this.txtResults.TabIndex = 0;
+      this.txtResults.Text = "";
       // 
       // lstAddresses
       // 
-      lstAddresses.FormattingEnabled = true;
-      lstAddresses.Location = new System.Drawing.Point(86, 59);
-      lstAddresses.Name = "lstAddresses";
-      lstAddresses.Size = new System.Drawing.Size(413, 95);
-      lstAddresses.TabIndex = 2;
-      lstAddresses.SelectedIndexChanged += new System.EventHandler(lstAddresses_SelectedIndexChanged);
+      this.lstAddresses.FormattingEnabled = true;
+      this.lstAddresses.Location = new System.Drawing.Point(86, 59);
+      this.lstAddresses.Name = "lstAddresses";
+      this.lstAddresses.Size = new System.Drawing.Size(413, 95);
+      this.lstAddresses.TabIndex = 2;
+      this.lstAddresses.SelectedIndexChanged += new System.EventHandler(this.lstAddresses_SelectedIndexChanged);
       // 
       // txtNewAddress
       // 
-      txtNewAddress.Location = new System.Drawing.Point(521, 59);
-      txtNewAddress.Name = "txtNewAddress";
-      txtNewAddress.Size = new System.Drawing.Size(215, 20);
-      txtNewAddress.TabIndex = 3;
+      this.txtNewAddress.Location = new System.Drawing.Point(521, 59);
+      this.txtNewAddress.Name = "txtNewAddress";
+      this.txtNewAddress.Size = new System.Drawing.Size(215, 20);
+      this.txtNewAddress.TabIndex = 3;
       // 
       // btnAddNew
       // 
-      btnAddNew.Location = new System.Drawing.Point(742, 59);
-      btnAddNew.Name = "btnAddNew";
-      btnAddNew.Size = new System.Drawing.Size(28, 23);
-      btnAddNew.TabIndex = 4;
-      btnAddNew.Text = "+";
-      btnAddNew.UseVisualStyleBackColor = true;
-      btnAddNew.Click += new System.EventHandler(btnAddNew_Click);
+      this.btnAddNew.Location = new System.Drawing.Point(742, 59);
+      this.btnAddNew.Name = "btnAddNew";
+      this.btnAddNew.Size = new System.Drawing.Size(28, 23);
+      this.btnAddNew.TabIndex = 4;
+      this.btnAddNew.Text = "+";
+      this.btnAddNew.UseVisualStyleBackColor = true;
+      this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
       // 
       // btnRemove
       // 
-      btnRemove.Location = new System.Drawing.Point(521, 131);
-      btnRemove.Name = "btnRemove";
-      btnRemove.Size = new System.Drawing.Size(175, 23);
-      btnRemove.TabIndex = 5;
-      btnRemove.Text = "Remove Selected";
-      btnRemove.UseVisualStyleBackColor = true;
-      btnRemove.Click += new System.EventHandler(btnRemove_Click);
+      this.btnRemove.Location = new System.Drawing.Point(521, 131);
+      this.btnRemove.Name = "btnRemove";
+      this.btnRemove.Size = new System.Drawing.Size(175, 23);
+      this.btnRemove.TabIndex = 5;
+      this.btnRemove.Text = "Remove Selected";
+      this.btnRemove.UseVisualStyleBackColor = true;
+      this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
       // 
       // lblHeader
       // 
-      lblHeader.AutoSize = true;
-      lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      lblHeader.Location = new System.Drawing.Point(131, 31);
-      lblHeader.Name = "lblHeader";
-      lblHeader.Size = new System.Drawing.Size(565, 25);
-      lblHeader.TabIndex = 6;
-      lblHeader.Text = "Check Have I Been Pwned site (thanks to Troy Hunt)";
+      this.lblHeader.AutoSize = true;
+      this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblHeader.Location = new System.Drawing.Point(131, 31);
+      this.lblHeader.Name = "lblHeader";
+      this.lblHeader.Size = new System.Drawing.Size(565, 25);
+      this.lblHeader.TabIndex = 6;
+      this.lblHeader.Text = "Check Have I Been Pwned site (thanks to Troy Hunt)";
       // 
       // menuStrip1
       // 
-      menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            fileToolStripMenuItem,
-            helpToolStripMenuItem});
-      menuStrip1.Location = new System.Drawing.Point(0, 0);
-      menuStrip1.Name = "menuStrip1";
-      menuStrip1.Size = new System.Drawing.Size(833, 24);
-      menuStrip1.TabIndex = 7;
-      menuStrip1.Text = "menuStrip1";
+      this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+      this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+      this.menuStrip1.Name = "menuStrip1";
+      this.menuStrip1.Size = new System.Drawing.Size(833, 24);
+      this.menuStrip1.TabIndex = 7;
+      this.menuStrip1.Text = "menuStrip1";
       // 
       // fileToolStripMenuItem
       // 
-      fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            exitToolStripMenuItem});
-      fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-      fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-      fileToolStripMenuItem.Text = "File";
+      this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+      this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+      this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+      this.fileToolStripMenuItem.Text = "File";
       // 
       // exitToolStripMenuItem
       // 
-      exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-      exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-      exitToolStripMenuItem.Text = "Exit";
-      exitToolStripMenuItem.Click += new System.EventHandler(exitToolStripMenuItem_Click);
+      this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+      this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+      this.exitToolStripMenuItem.Text = "Exit";
+      this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
       // 
       // helpToolStripMenuItem
       // 
-      helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            aboutToolStripMenuItem});
-      helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-      helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-      helpToolStripMenuItem.Text = "Help";
+      this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+      this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+      this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+      this.helpToolStripMenuItem.Text = "Help";
       // 
       // aboutToolStripMenuItem
       // 
-      aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-      aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-      aboutToolStripMenuItem.Text = "About";
-      aboutToolStripMenuItem.Click += new System.EventHandler(aboutToolStripMenuItem_Click);
+      this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+      this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+      this.aboutToolStripMenuItem.Text = "About";
+      this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
       // 
       // FrmHibp
       // 
-      AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      ClientSize = new System.Drawing.Size(833, 592);
-      Controls.Add(lblHeader);
-      Controls.Add(btnRemove);
-      Controls.Add(btnAddNew);
-      Controls.Add(txtNewAddress);
-      Controls.Add(lstAddresses);
-      Controls.Add(pnlResults);
-      Controls.Add(pnlControls);
-      Controls.Add(menuStrip1);
-      MainMenuStrip = menuStrip1;
-      MaximizeBox = false;
-      MaximumSize = new System.Drawing.Size(849, 630);
-      MinimumSize = new System.Drawing.Size(849, 630);
-      Name = "FrmHibp";
-      SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-      Text = "Check Troy Hunt\'s Have I Been Pwned";
-      Load += new System.EventHandler(frmHIBP_Load);
-      pnlControls.ResumeLayout(false);
-      pnlResults.ResumeLayout(false);
-      menuStrip1.ResumeLayout(false);
-      menuStrip1.PerformLayout();
-      ResumeLayout(false);
-      PerformLayout();
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = new System.Drawing.Size(833, 592);
+      this.Controls.Add(this.lblHeader);
+      this.Controls.Add(this.btnRemove);
+      this.Controls.Add(this.btnAddNew);
+      this.Controls.Add(this.txtNewAddress);
+      this.Controls.Add(this.lstAddresses);
+      this.Controls.Add(this.pnlResults);
+      this.Controls.Add(this.pnlControls);
+      this.Controls.Add(this.menuStrip1);
+      this.MainMenuStrip = this.menuStrip1;
+      this.MaximizeBox = false;
+      this.MaximumSize = new System.Drawing.Size(849, 630);
+      this.MinimumSize = new System.Drawing.Size(849, 630);
+      this.Name = "FrmHibp";
+      this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+      this.Text = "Check Troy Hunt\'s Have I Been Pwned";
+      this.Load += new System.EventHandler(this.frmHIBP_Load);
+      this.pnlControls.ResumeLayout(false);
+      this.pnlResults.ResumeLayout(false);
+      this.menuStrip1.ResumeLayout(false);
+      this.menuStrip1.PerformLayout();
+      this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
