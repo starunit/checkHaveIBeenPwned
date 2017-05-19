@@ -169,7 +169,7 @@ namespace checkHaveIBeenPwned
           content = myException.Message;
           if (content.IndexOf("404", StringComparison.CurrentCulture) > 0)
           {
-            content = "No breach found";
+            content = lstAddresses.SelectedItem + ": No breach found";
           }
           else if (content.IndexOf("429", StringComparison.CurrentCulture) > 0)
           {
