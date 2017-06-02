@@ -52,3 +52,4 @@ Temporary Items
 *.StyleCop
 StyleCop.Cache
 checkHaveIBeenPwned.csproj.user
+/checkHaveIBeenPwned.ruleset
