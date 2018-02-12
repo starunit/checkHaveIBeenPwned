@@ -36,6 +36,7 @@ namespace checkHaveIBeenPwned
     private void InitializeComponent()
     {
       this.pnlControls = new System.Windows.Forms.Panel();
+      this.btnCheckAll = new System.Windows.Forms.Button();
       this.btnClose = new System.Windows.Forms.Button();
       this.pnlResults = new System.Windows.Forms.Panel();
       this.txtResults = new System.Windows.Forms.RichTextBox();
@@ -49,6 +50,8 @@ namespace checkHaveIBeenPwned
       this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+      this.txtFound = new System.Windows.Forms.TextBox();
+      this.lblFound = new System.Windows.Forms.Label();
       this.pnlControls.SuspendLayout();
       this.pnlResults.SuspendLayout();
       this.menuStrip1.SuspendLayout();
@@ -56,12 +59,23 @@ namespace checkHaveIBeenPwned
       // 
       // pnlControls
       // 
+      this.pnlControls.Controls.Add(this.btnCheckAll);
       this.pnlControls.Controls.Add(this.btnClose);
       this.pnlControls.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.pnlControls.Location = new System.Drawing.Point(0, 545);
+      this.pnlControls.Location = new System.Drawing.Point(0, 645);
       this.pnlControls.Name = "pnlControls";
       this.pnlControls.Size = new System.Drawing.Size(833, 47);
       this.pnlControls.TabIndex = 0;
+      // 
+      // btnCheckAll
+      // 
+      this.btnCheckAll.Location = new System.Drawing.Point(14, 10);
+      this.btnCheckAll.Name = "btnCheckAll";
+      this.btnCheckAll.Size = new System.Drawing.Size(104, 25);
+      this.btnCheckAll.TabIndex = 1;
+      this.btnCheckAll.Text = "Check All";
+      this.btnCheckAll.UseVisualStyleBackColor = true;
+      this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
       // 
       // btnClose
       // 
@@ -79,42 +93,44 @@ namespace checkHaveIBeenPwned
       this.pnlResults.BackColor = System.Drawing.SystemColors.ActiveCaption;
       this.pnlResults.Controls.Add(this.txtResults);
       this.pnlResults.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.pnlResults.Location = new System.Drawing.Point(0, 171);
+      this.pnlResults.Location = new System.Drawing.Point(0, 251);
       this.pnlResults.Name = "pnlResults";
-      this.pnlResults.Size = new System.Drawing.Size(833, 374);
+      this.pnlResults.Size = new System.Drawing.Size(833, 394);
       this.pnlResults.TabIndex = 1;
       // 
       // txtResults
       // 
+      this.txtResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.txtResults.BackColor = System.Drawing.SystemColors.Info;
-      this.txtResults.Dock = System.Windows.Forms.DockStyle.Fill;
       this.txtResults.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtResults.Location = new System.Drawing.Point(0, 0);
+      this.txtResults.Location = new System.Drawing.Point(0, 3);
       this.txtResults.Name = "txtResults";
       this.txtResults.ReadOnly = true;
-      this.txtResults.Size = new System.Drawing.Size(833, 374);
+      this.txtResults.Size = new System.Drawing.Size(830, 388);
       this.txtResults.TabIndex = 0;
       this.txtResults.Text = "";
       // 
       // lstAddresses
       // 
       this.lstAddresses.FormattingEnabled = true;
-      this.lstAddresses.Location = new System.Drawing.Point(86, 59);
+      this.lstAddresses.Location = new System.Drawing.Point(0, 59);
       this.lstAddresses.Name = "lstAddresses";
-      this.lstAddresses.Size = new System.Drawing.Size(413, 95);
+      this.lstAddresses.Size = new System.Drawing.Size(413, 186);
       this.lstAddresses.TabIndex = 2;
       this.lstAddresses.SelectedIndexChanged += new System.EventHandler(this.lstAddresses_SelectedIndexChanged);
       // 
       // txtNewAddress
       // 
-      this.txtNewAddress.Location = new System.Drawing.Point(521, 59);
+      this.txtNewAddress.Location = new System.Drawing.Point(423, 59);
       this.txtNewAddress.Name = "txtNewAddress";
       this.txtNewAddress.Size = new System.Drawing.Size(215, 20);
       this.txtNewAddress.TabIndex = 3;
       // 
       // btnAddNew
       // 
-      this.btnAddNew.Location = new System.Drawing.Point(742, 59);
+      this.btnAddNew.Location = new System.Drawing.Point(644, 59);
       this.btnAddNew.Name = "btnAddNew";
       this.btnAddNew.Size = new System.Drawing.Size(28, 23);
       this.btnAddNew.TabIndex = 4;
@@ -124,9 +140,9 @@ namespace checkHaveIBeenPwned
       // 
       // btnRemove
       // 
-      this.btnRemove.Location = new System.Drawing.Point(521, 131);
+      this.btnRemove.Location = new System.Drawing.Point(692, 59);
       this.btnRemove.Name = "btnRemove";
-      this.btnRemove.Size = new System.Drawing.Size(175, 23);
+      this.btnRemove.Size = new System.Drawing.Size(129, 24);
       this.btnRemove.TabIndex = 5;
       this.btnRemove.Text = "Remove Selected";
       this.btnRemove.UseVisualStyleBackColor = true;
@@ -183,11 +199,32 @@ namespace checkHaveIBeenPwned
       this.aboutToolStripMenuItem.Text = "About";
       this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
       // 
+      // txtFound
+      // 
+      this.txtFound.Location = new System.Drawing.Point(423, 117);
+      this.txtFound.Multiline = true;
+      this.txtFound.Name = "txtFound";
+      this.txtFound.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+      this.txtFound.Size = new System.Drawing.Size(401, 128);
+      this.txtFound.TabIndex = 8;
+      // 
+      // lblFound
+      // 
+      this.lblFound.AutoSize = true;
+      this.lblFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblFound.Location = new System.Drawing.Point(420, 101);
+      this.lblFound.Name = "lblFound";
+      this.lblFound.Size = new System.Drawing.Size(76, 13);
+      this.lblFound.TabIndex = 9;
+      this.lblFound.Text = "Found Items";
+      // 
       // FrmHibp
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(833, 592);
+      this.ClientSize = new System.Drawing.Size(833, 692);
+      this.Controls.Add(this.lblFound);
+      this.Controls.Add(this.txtFound);
       this.Controls.Add(this.lblHeader);
       this.Controls.Add(this.btnRemove);
       this.Controls.Add(this.btnAddNew);
@@ -198,7 +235,7 @@ namespace checkHaveIBeenPwned
       this.Controls.Add(this.menuStrip1);
       this.MainMenuStrip = this.menuStrip1;
       this.MaximizeBox = false;
-      this.MaximumSize = new System.Drawing.Size(849, 630);
+      this.MaximumSize = new System.Drawing.Size(849, 730);
       this.MinimumSize = new System.Drawing.Size(849, 630);
       this.Name = "FrmHibp";
       this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -229,5 +266,8 @@ namespace checkHaveIBeenPwned
     private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+    private System.Windows.Forms.TextBox txtFound;
+    private System.Windows.Forms.Label lblFound;
+    private System.Windows.Forms.Button btnCheckAll;
   }
 }

@@ -3,18 +3,23 @@
 //     Copyright (c) Starunit Web Services. 2017
 // </copyright>
 //-----------------------------------------------------------------------
+
+// using System.Runtime.InteropServices;
+
 namespace checkHaveIBeenPwned
 {
   using System;
   using System.Net;
   using System.Windows.Forms;
 
+  /// <inheritdoc />
   /// <summary>
   /// Main form for to ping Troy Hunt's Have I Been Pwned site
   /// </summary>
-  /// <seealso cref="System.Windows.Forms.Form" />
+  /// <seealso cref="T:System.Windows.Forms.Form" />
   public partial class FrmHibp : Form
   {
+    /// <inheritdoc />
     /// <summary>
     /// Initializes a new instance of the FrmHibp class
     /// </summary>
@@ -162,6 +167,8 @@ namespace checkHaveIBeenPwned
             content = content.Replace("}]", string.Empty);
             content = content.Replace("\",\"", "\"" + Environment.NewLine + "\"");
             content = content.Replace(",\"", "\"" + Environment.NewLine + "\"");
+
+            txtFound.Text = txtFound.Text + lstAddresses.SelectedItem + Environment.NewLine;
           }
         }
         catch (Exception myException)
@@ -200,6 +207,18 @@ namespace checkHaveIBeenPwned
     {
       frmHIBP_About myAbout = new frmHIBP_About();
       myAbout.Show();
+    }
+
+    private void btnCheckAll_Click(object sender, EventArgs e)
+    {
+      // iterate through list items, wait 1700 milliseconds between
+
+      for (int iCurr = 0; iCurr <= lstAddresses.Items.Count - 1; iCurr++)
+      {
+        lstAddresses.SelectedIndex = iCurr;
+        Refresh();
+        System.Threading.Thread.Sleep(1700);
+      }
     }
   }
 }
