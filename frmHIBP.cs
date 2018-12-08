@@ -6,6 +6,7 @@
 
 // using System.Runtime.InteropServices;
 
+// ReSharper disable StringIndexOfIsCultureSpecific.1
 namespace checkHaveIBeenPwned
 {
   using System;
@@ -145,9 +146,10 @@ namespace checkHaveIBeenPwned
       ServicePointManager.Expect100Continue = true;
       ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
       string ua = Properties.Settings.Default.ua;
-      string content = string.Empty;
       txtResults.Text = string.Empty;
+      int pwnCount = 0;
 
+      string content = string.Empty;
       if (lstAddresses.SelectedItem == null)
       {
         content = string.Empty;
@@ -163,12 +165,22 @@ namespace checkHaveIBeenPwned
             WebClient syncClient = new WebClient();
             syncClient.Headers.Add("user-agent", ua);
             content = syncClient.DownloadString(myURL);
+            int iPosition = content.IndexOf("BreachDate");
+            while (iPosition > 0)
+            {
+              pwnCount++;
+              iPosition = iPosition + 10;
+              // ReSharper disable once StringIndexOfIsCultureSpecific.2
+              iPosition = content.IndexOf("BreachDate", iPosition);
+            }
+
             content = content.Replace("[{", string.Empty);
             content = content.Replace("}]", string.Empty);
+            content = content.Replace("},{", Environment.NewLine + Environment.NewLine + "***** NEXT ******" + Environment.NewLine);
             content = content.Replace("\",\"", "\"" + Environment.NewLine + "\"");
             content = content.Replace(",\"", "\"" + Environment.NewLine + "\"");
 
-            txtFound.Text = txtFound.Text + lstAddresses.SelectedItem + Environment.NewLine;
+            txtFound.Text = $@"{txtFound.Text}{lstAddresses.SelectedItem} ({pwnCount}){Environment.NewLine}";
           }
         }
         catch (Exception myException)
