@@ -145,11 +145,9 @@ namespace checkHaveIBeenPwned
     {
       ServicePointManager.Expect100Continue = true;
       ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-      string ua = Properties.Settings.Default.ua;
-      txtResults.Text = string.Empty;
-      int pwnCount = 0;
 
       string content = string.Empty;
+      int pwnCount = 0;
       if (lstAddresses.SelectedItem == null)
       {
         content = string.Empty;
@@ -160,25 +158,7 @@ namespace checkHaveIBeenPwned
         {
           if (lstAddresses.SelectedItem.ToString().Length > 0)
           {
-            // ReSharper disable once InconsistentNaming
-            string myURL = Properties.Settings.Default.HIBP_URL + lstAddresses.SelectedItem;
-            WebClient syncClient = new WebClient();
-            syncClient.Headers.Add("user-agent", ua);
-            content = syncClient.DownloadString(myURL);
-            int iPosition = content.IndexOf("BreachDate");
-            while (iPosition > 0)
-            {
-              pwnCount++;
-              iPosition = iPosition + 10;
-              // ReSharper disable once StringIndexOfIsCultureSpecific.2
-              iPosition = content.IndexOf("BreachDate", iPosition);
-            }
-
-            content = content.Replace("[{", string.Empty);
-            content = content.Replace("}]", string.Empty);
-            content = content.Replace("},{", Environment.NewLine + Environment.NewLine + "***** NEXT ******" + Environment.NewLine);
-            content = content.Replace("\",\"", "\"" + Environment.NewLine + "\"");
-            content = content.Replace(",\"", "\"" + Environment.NewLine + "\"");
+            content = CallToHIBP(lstAddresses.SelectedItem.ToString(), ref pwnCount);
 
             txtFound.Text = $@"{txtFound.Text}{lstAddresses.SelectedItem} ({pwnCount}){Environment.NewLine}";
           }
@@ -198,6 +178,45 @@ namespace checkHaveIBeenPwned
       }
 
       txtResults.Text = content;
+    }
+
+    /// <summary>
+    /// CallToHIBP is an abstract for to check the selected string
+    /// </summary>
+    /// <param name="strToCheck"></param>
+    /// <param name="pwnCount"></param>
+    /// <returns>returns a string of the result, and
+    /// through a ref parameter, the number of breaches</returns>
+
+    // ReSharper disable once InconsistentNaming
+    private string CallToHIBP(string strToCheck, ref int pwnCount)
+    {
+      txtResults.Text = string.Empty;
+      
+      string ua = Properties.Settings.Default.ua;
+
+      // ReSharper disable once InconsistentNaming
+      string myURL = Properties.Settings.Default.HIBP_URL + strToCheck;
+      WebClient syncClient = new WebClient();
+      syncClient.Headers.Add("user-agent", ua);
+      string content = syncClient.DownloadString(myURL);
+      int iPosition = content.IndexOf("BreachDate");
+      while (iPosition > 0)
+      {
+        pwnCount++;
+        iPosition = iPosition + 10;
+        // ReSharper disable once StringIndexOfIsCultureSpecific.2
+        iPosition = content.IndexOf("BreachDate", iPosition);
+      }
+
+      content = content.Replace("[{", string.Empty);
+      content = content.Replace("}]", string.Empty);
+      content = content.Replace("},{", Environment.NewLine + Environment.NewLine + "***** NEXT ******" + Environment.NewLine);
+      content = content.Replace("\",\"", "\"" + Environment.NewLine + "\"");
+      content = content.Replace(",\"", "\"" + Environment.NewLine + "\"");
+
+      return content;
+
     }
 
     /// <summary>
@@ -221,15 +240,38 @@ namespace checkHaveIBeenPwned
       myAbout.Show();
     }
 
+    /// <summary>
+    /// Handles the Click event of the btnCheckAll control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
     private void btnCheckAll_Click(object sender, EventArgs e)
     {
       // iterate through list items, wait 1700 milliseconds between
 
-      for (int iCurr = 0; iCurr <= lstAddresses.Items.Count - 1; iCurr++)
+      for (int iCur = 0; iCur <= lstAddresses.Items.Count - 1; iCur++)
       {
-        lstAddresses.SelectedIndex = iCurr;
+        lstAddresses.SelectedIndex = iCur;
         Refresh();
         System.Threading.Thread.Sleep(1700);
+      }
+    }
+
+    /// <summary>
+    /// Handles the Click event of the checkAddressToolStripMenuItem control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+    private void checkAddressToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      string sel = txtFound.SelectedText;
+      int pwnCount = 0;
+      sel = sel.Trim();
+
+      if (sel.Length > 0)
+      {
+        string content = CallToHIBP(sel, ref pwnCount);
+        txtResults.Text = content;
       }
     }
   }

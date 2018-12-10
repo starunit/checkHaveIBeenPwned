@@ -35,6 +35,7 @@ namespace checkHaveIBeenPwned
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       this.pnlControls = new System.Windows.Forms.Panel();
       this.btnCheckAll = new System.Windows.Forms.Button();
       this.btnClose = new System.Windows.Forms.Button();
@@ -51,10 +52,13 @@ namespace checkHaveIBeenPwned
       this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.txtFound = new System.Windows.Forms.TextBox();
+      this.txtFoundMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.checkAddressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.lblFound = new System.Windows.Forms.Label();
       this.pnlControls.SuspendLayout();
       this.pnlResults.SuspendLayout();
       this.menuStrip1.SuspendLayout();
+      this.txtFoundMenu.SuspendLayout();
       this.SuspendLayout();
       // 
       // pnlControls
@@ -201,12 +205,27 @@ namespace checkHaveIBeenPwned
       // 
       // txtFound
       // 
+      this.txtFound.ContextMenuStrip = this.txtFoundMenu;
       this.txtFound.Location = new System.Drawing.Point(423, 117);
       this.txtFound.Multiline = true;
       this.txtFound.Name = "txtFound";
       this.txtFound.ScrollBars = System.Windows.Forms.ScrollBars.Both;
       this.txtFound.Size = new System.Drawing.Size(401, 128);
       this.txtFound.TabIndex = 8;
+      // 
+      // txtFoundMenu
+      // 
+      this.txtFoundMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkAddressToolStripMenuItem});
+      this.txtFoundMenu.Name = "contextMenuStrip1";
+      this.txtFoundMenu.Size = new System.Drawing.Size(181, 48);
+      // 
+      // checkAddressToolStripMenuItem
+      // 
+      this.checkAddressToolStripMenuItem.Name = "checkAddressToolStripMenuItem";
+      this.checkAddressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+      this.checkAddressToolStripMenuItem.Text = "Check Address";
+      this.checkAddressToolStripMenuItem.Click += new System.EventHandler(this.checkAddressToolStripMenuItem_Click);
       // 
       // lblFound
       // 
@@ -245,6 +264,7 @@ namespace checkHaveIBeenPwned
       this.pnlResults.ResumeLayout(false);
       this.menuStrip1.ResumeLayout(false);
       this.menuStrip1.PerformLayout();
+      this.txtFoundMenu.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -269,5 +289,7 @@ namespace checkHaveIBeenPwned
     private System.Windows.Forms.TextBox txtFound;
     private System.Windows.Forms.Label lblFound;
     private System.Windows.Forms.Button btnCheckAll;
+    private System.Windows.Forms.ContextMenuStrip txtFoundMenu;
+    private System.Windows.Forms.ToolStripMenuItem checkAddressToolStripMenuItem;
   }
 }
