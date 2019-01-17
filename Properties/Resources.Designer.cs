@@ -19,7 +19,7 @@ namespace checkHaveIBeenPwned.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -66,7 +66,7 @@ namespace checkHaveIBeenPwned.Properties {
         ///For to provide a simple interface to check
         ///Troy Hunt&apos;s haveibeenpwned.com site for email addresses.
         ///Enter a few address to keep track of; 
-        ///clicking an address will request data from Mr. Hunt&apos; site, haveibeenpwned.com..
+        ///clicking an address will request data from Mr. Hunt&apos;s site, haveibeenpwned.com..
         /// </summary>
         internal static string txtDescription {
             get {

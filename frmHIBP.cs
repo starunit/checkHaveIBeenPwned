@@ -196,7 +196,7 @@ namespace checkHaveIBeenPwned
       string ua = Properties.Settings.Default.ua;
 
       // ReSharper disable once InconsistentNaming
-      string myURL = Properties.Settings.Default.HIBP_URL + strToCheck;
+      string myURL = Properties.Settings.Default.HIBP_URL + strToCheck + "?includeUnverified=true";
       WebClient syncClient = new WebClient();
       syncClient.Headers.Add("user-agent", ua);
       string content = syncClient.DownloadString(myURL);
